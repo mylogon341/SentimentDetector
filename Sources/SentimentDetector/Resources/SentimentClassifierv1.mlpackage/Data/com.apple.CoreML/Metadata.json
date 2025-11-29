@@ -1,0 +1,12 @@
+{
+  "MLModelLicenseKey" : "MIT license",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.training.finished" : "2025-11-29T20:24:00Z",
+    "com.apple.createml.app.tag" : "175.7",
+    "com.apple.createml.model.created" : "2025-11-29T20:24:00Z",
+    "com.apple.coreml.model.preview.type" : "textClassifier",
+    "com.apple.createml.app.version" : "6.2",
+    "com.apple.createml.training.started" : "2025-11-29T20:23:59Z"
+  },
+  "MLModelAuthorKey" : "luke sadler"
+}
