@@ -40,6 +40,9 @@ import SentimentDetector
 // `.positive`
 let result = try SentimentDetector.quickAnalyse("I love this product! It's amazing and very helpful.")
 
+// (.positive: 0.96)
+print(try result.max) 
+
 /*
 [
  .neutral: 0.94,
@@ -48,10 +51,6 @@ let result = try SentimentDetector.quickAnalyse("I love this product! It's amazi
 ]
 */
 let result = try SentimentDetector.analyse("This product is completely fine.")
-
-// (.positive: 0.96)
-print(try result.max) 
-
 ```
 
 ### Contribution
