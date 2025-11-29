@@ -12,9 +12,25 @@ This is a fairly basic sentiment text clasification library. Passing in English 
 - Negative
 - Profanity
 
+This project was all about learning the basics of CoreML training, but it’s actually pretty good to share with others now. It’s a fairly lightweight library that can act as a front-end detector, running all the work offline on your device. 
+
 ### Installation
 
 Adding this to your project is simply a case of adding `https://github.com/mylogon341/SentimentDetector.git` to Xcode Package manager.
+
+### Suppported platforms
+
+I've supported as many plaforms and targets as possible.  
+However, on < macOS 11, you can only run `quickAnalyse`.
+
+```json
+platforms: [
+  .iOS(.v12),
+  .macOS(.v10_14),
+  .tvOS(.v12),
+  .visionOS(.v1)
+],
+```
 
 ### Usage
 
@@ -34,7 +50,7 @@ let result = try SentimentDetector.quickAnalyse("I love this product! It's amazi
 let result = try SentimentDetector.analyse("This product is completely fine.")
 
 // (.positive: 0.96)
-print(try result.max)
+print(try result.max) 
 
 ```
 
