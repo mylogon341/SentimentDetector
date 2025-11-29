@@ -2,7 +2,7 @@ import Testing
 @testable import SentimentDetector
 
 @Test func testQuickPositiveMessages() async throws {
-    let result = try SentimentDetector.quickAnalyse("I love this product! It's amazing and very helpful.")
+  let result = try SentimentDetector.quickAnalyse("I love this product! It's amazing and very helpful.")
   
   #expect(result == .positive)
 }
@@ -52,6 +52,12 @@ import Testing
   let analysis = try SentimentDetector.analyse("I'm really happy with the service i received")
   
   #expect(try analysis.max.label == .positive)
+}
+
+@Test func testPositiveMessageScore() async throws {
+  let analysis = try SentimentDetector.analyse("I'm really happy with the service i received")
+  
+  #expect(analysis.valueFor(.positive) > 0.9)
 }
 
 @Test func testNegativeMessages() async throws {

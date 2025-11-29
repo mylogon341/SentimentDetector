@@ -25,6 +25,10 @@ public struct SentimentDetector {
   public struct Analysis {
     let result: [PredictionLabel: Double]
     
+    func valueFor(_ label: PredictionLabel) -> Double {
+      result[label] ?? 0.0
+    }
+    
     var max: (label: PredictionLabel, value: Double) {
       get throws {
         if let highest = result.max(by: { $0.value < $1.value }) {
