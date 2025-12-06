@@ -50,7 +50,7 @@ public struct SentimentDetector {
     let mlModel = try SentimentClassifierv1(configuration: .init())
     let nlModel = try NLModel(mlModel: mlModel.model)
     
-    let hypothesis = nlModel.predictedLabelHypotheses(for: text,
+    let hypothesis = nlModel.predictedLabelHypotheses(for: text.sanitised,
                                                       maximumCount: 5)
     
     let mappedValues: [PredictionLabel: Double] = Dictionary(uniqueKeysWithValues:
@@ -71,7 +71,7 @@ public struct SentimentDetector {
     
     let mlModel = try SentimentClassifierv1(configuration: .init())
     let nlModel = try NLModel(mlModel: mlModel.model)
-    if let prediction = nlModel.predictedLabel(for: text) {
+    if let prediction = nlModel.predictedLabel(for: text.sanitised) {
       
       guard let label = PredictionLabel(rawValue: prediction) else {
         throw SentimentDetectorError.labelNotFound

@@ -6,8 +6,8 @@ import PackageDescription
 let package = Package(
     name: "SentimentDetector",
     platforms: [
-      .iOS(.v12),
-      .macOS(.v10_14),
+      .iOS(.v13),
+      .macOS(.v10_15),
       .tvOS(.v12),
       .visionOS(.v1)
     ],
